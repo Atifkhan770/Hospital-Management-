@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Hospital</h2>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/patients">Patients</a>
+    <a href="/doctors">Doctors</a>
+    <a href="/appointments">Appointments</a>
+    <a href="/billing">Billing</a>
+    <a href="/pharmacy">Pharmacy</a>
+    <a href="/lab">Lab</a>
+</div>
+
+<div class="main">
+    <h2>Appointments</h2>
+
+    <form method="POST" action="/add_appointment">
+        <input name="patient_id" placeholder="Patient ID">
+        <input name="doctor_id" placeholder="Doctor ID">
+        <input type="date" name="date">
+        <input type="time" name="time">
+        <button>Book</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>ID</th><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th><th>Action</th>
+        </tr>
+
+        {% for a in data %}
+        <tr>
+            <td>{{a.id}}</td>
+            <td>{{a.patient_id}}</td>
+            <td>{{a.doctor_id}}</td>
+            <td>{{a.date}}</td>
+            <td>{{a.time}}</td>
+            <td>
+                <a href="/delete_appointment/{{a.id}}">
+                    <button style="background:red;">Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>

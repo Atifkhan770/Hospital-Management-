@@ -1,0 +1,220 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+    background: #f4f7fb;
+    color: #333;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    background: linear-gradient(135deg, #0f2027, #2c5364);
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px;
+    margin: 8px 0;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.2);
+    padding-left: 18px;
+}
+
+/* ================= MAIN ================= */
+.main {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+/* ================= TOPBAR ================= */
+.topbar {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* ================= CARDS ================= */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 220px;
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* ================= FORM ================= */
+form {
+    margin: 20px 0;
+}
+
+form input, form select {
+    padding: 10px;
+    margin: 6px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
+}
+
+form input:focus {
+    border-color: #5b86e5;
+}
+
+/* ================= BUTTON ================= */
+button {
+    padding: 10px 15px;
+    background: #2c5364;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1c3b47;
+}
+
+/* DELETE BUTTON */
+button.delete {
+    background: #e74c3c;
+}
+
+button.delete:hover {
+    background: #c0392b;
+}
+
+/* ================= TABLE ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+th {
+    background: #2c5364;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background: #f9f9f9;
+}
+
+/* ================= STATUS TAG ================= */
+.status {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: white;
+}
+
+.status.paid {
+    background: #27ae60;
+}
+
+.status.pending {
+    background: #e67e22;
+}
+
+/* ================= LOGIN PAGE ================= */
+.login-bg {
+    background: url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.login-box {
+    width: 350px;
+    margin: 120px auto;
+    background: rgba(255,255,255,0.95);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #2c5364;
+}
+
+/* ================= SCROLLBAR ================= */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main {
+        margin-left: 0;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+}

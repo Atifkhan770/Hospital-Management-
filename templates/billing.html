@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Hospital</h2>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/patients">Patients</a>
+    <a href="/doctors">Doctors</a>
+    <a href="/appointments">Appointments</a>
+    <a href="/billing">Billing</a>
+    <a href="/pharmacy">Pharmacy</a>
+    <a href="/lab">Lab</a>
+</div>
+
+<div class="main">
+    <h2>Billing</h2>
+
+    <form method="POST" action="/add_bill">
+        <input name="patient_id" placeholder="Patient ID">
+        <input name="amount" placeholder="Amount">
+        <select name="status">
+            <option>Paid</option>
+            <option>Pending</option>
+        </select>
+        <button>Add</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>ID</th><th>Patient</th><th>Amount</th><th>Status</th><th>Action</th>
+        </tr>
+
+        {% for b in data %}
+        <tr>
+            <td>{{b.id}}</td>
+            <td>{{b.patient_id}}</td>
+            <td>{{b.amount}}</td>
+            <td>{{b.status}}</td>
+            <td>
+                <a href="/delete_bill/{{b.id}}">
+                    <button style="background:red;">Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>

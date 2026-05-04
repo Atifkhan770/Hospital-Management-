@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Hospital</h2>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/patients">Patients</a>
+    <a href="/doctors">Doctors</a>
+    <a href="/appointments">Appointments</a>
+    <a href="/billing">Billing</a>
+    <a href="/pharmacy">Pharmacy</a>
+    <a href="/lab">Lab</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="main">
+    <h1>Dashboard</h1>
+
+    <div class="card">Total Patients: {{p}}</div>
+    <div class="card">Total Doctors: {{d}}</div>
+    <div class="card">Total Appointments: {{a}}</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patients</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Hospital</h2>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/patients">Patients</a>
+    <a href="/doctors">Doctors</a>
+    <a href="/appointments">Appointments</a>
+    <a href="/billing">Billing</a>
+    <a href="/pharmacy">Pharmacy</a>
+    <a href="/lab">Lab</a>
+</div>
+
+<div class="main">
+    <h2>Patients</h2>
+
+    <form method="POST" action="/add_patient">
+        <input name="name" placeholder="Name">
+        <input name="age" placeholder="Age">
+        <input name="gender" placeholder="Gender">
+        <input name="phone" placeholder="Phone">
+        <button>Add</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>Action</th>
+        </tr>
+
+        {% for p in data %}
+        <tr>
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.age}}</td>
+            <td>{{p.gender}}</td>
+            <td>
+                <a href="/delete_patient/{{p.id}}">
+                    <button style="background:red;">Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>
